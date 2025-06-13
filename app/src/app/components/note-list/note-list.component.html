@@ -1,0 +1,20 @@
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>{{"TITLE" | translate}}</th>
+                <th>{{"DATE" | translate}}</th>
+                <th>{{"ACTIONS" | translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (note of notes; track note.id) {
+                <tr [ngClass]="{'important': note.isImportant, 'unimportant': !note.isImportant}">
+                    <td>{{ note.title.length > 10 ? note.title.slice(0, 7)+'...' : note.title }}</td>
+                    <td>{{ note.creationDate | date:"dd/MM/yyyy"}}</td>
+                    <td><a [routerLink]="[note.id, 'edit']">{{"EDIT" | translate}}</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

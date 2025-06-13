@@ -1,0 +1,27 @@
+<div class="form-container">
+    <form [formGroup]="form">
+        <fieldset>
+            <legend>{{"EDIT" | translate}}</legend>
+
+            <div class="input-wrapper">
+                <input type="text" id="title" formControlName="title">
+                <label for="title">{{"TITLE" | translate}}</label>
+            </div>
+
+            <div class="input-wrapper">
+                <input type="text" id="content" formControlName="content">
+                <label for="content">{{"CONTENT" | translate}}</label>
+            </div>
+
+            <div class="input-wrapper">
+                <input type="checkbox" id="isImportant" formControlName="isImportant">
+                <label for="isImportant">{{"IS_IMPORTANT" | translate}}</label>
+            </div>
+
+            <div class="button-wrapper">
+                <button (click)="cancelEdit()">{{"CANCEL" | translate}}</button>
+                <button (click)="saveEdit()">{{"SUBMIT" | translate}}</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
